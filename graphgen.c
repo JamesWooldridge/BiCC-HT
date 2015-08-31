@@ -121,7 +121,8 @@ void buildRandomEdge(Graph *graph) {
 	// Pick a dest node that isn't already connected to the src node
 	int destIndex  = rand() % graph->emptyIndex;
 	int alreadyChecked[graph->emptyIndex];
-	for(int i = 0; i < graph->emptyIndex; i++) { 
+	int i;
+	for(i = 0; i < graph->emptyIndex; i++) { 
 		alreadyChecked[i] = 0;
 	}
 	while(destIndex == srcIndex || alreadyChecked[destIndex] == 1 || isReachable(graph, srcIndex, destIndex)) {
