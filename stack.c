@@ -32,16 +32,9 @@ void destroyStack(Stack *stack) {
 }
 
 /**
- *	Pushes an element to the stack. If the stack is full,
- *	its size is doubled before pushing
+ *	Pushes an element to the stack.
  */
 void pushStack(Stack *stack, StackElement element) {
-	if(stackIsFull(stack)) {										// Check if size needs to increase
-		int newSize = stack->maxSize * 2;							// New size of array is twice the size of the old one
-		stack->contents = (StackElement *) realloc(stack->contents, newSize);		// Realloc with new size
-		stack->maxSize = newSize;									// Set maxSize accordingly
-	}
-
 	stack->contents[++stack->top] = element;						// Increment top of stack and add element
 }
 
@@ -55,15 +48,7 @@ StackElement popStack(Stack *stack) {
 	   	exit(1);
 	}
 
-	StackElement popped = stack->contents[stack->top--];			// Remove the top element
-
-	if(stack->top < (stack->maxSize / 4)) {							// Check if stack can be halved
-		int newSize = stack->maxSize / 4;							// New size of array is a quarter the size of the old one
-		stack->contents = realloc(stack->contents, newSize);		// Realloc with new size
-		stack->maxSize = newSize;									// Set maxSize accordingly
-	}
-
-	return popped;
+	return stack->contents[stack->top--];			// Remove the top element
 }
 
 /** 

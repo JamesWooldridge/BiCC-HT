@@ -105,7 +105,7 @@ int getVertex(Graph *graph, char* label) {
 int addVertexSearch(Graph *graph, char* label) {
 	// First check if there's a vertex that already contains the given label
 	int v = getVertex(graph, label);
-    if(v != -1) {
+    if(v == -1) {
         // Not found - add it
         return addVertex(graph, label);
     } else {

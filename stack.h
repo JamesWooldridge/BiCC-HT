@@ -21,14 +21,12 @@ Stack * initStack(int maxSize);
 void destroyStack(Stack *stack);
 
 /**
- *	Pushes an element to the stack. If the stack is full,
- *	its size is doubled before pushing
+ *	Pushes an element to the stack.
  */
 void pushStack(Stack *stack, StackElement element);
 
 /**
- *	Pops an element from the stack. If the stack is less than half full,
- *	after the pop, its size is halved
+ *	Pops an element from the stack.
  */
 StackElement popStack(Stack *stack);
 

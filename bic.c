@@ -169,7 +169,7 @@ void findBiconnectedComponents(Graph *graph, FILE *fp) {
 	}
 
 	v = &graph->array[0];
-	
+
 	Stack *stack = initStack(graph->numEdges);
 	dfsArticulation(graph, v, 0, stack, fp);
 	destroyStack(stack);
