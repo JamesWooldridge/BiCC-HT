@@ -6,9 +6,7 @@ To run the biconnected component search, use the bic executable. Three arguments
 	- a flag specifying whether the input graph labels can be treated as integers or not 
 		(1 if true, 0 if not)
 
-Note that the intMode flag isn't important - it merely allows the graph file to be parsed 
-faster when the labels are integers and intMode is 1. If integers are used but the flag is 0,
-it will still work, just slowly.
+Note that the intMode flag isn't important - it merely allows the graph file to be parsed faster when the labels are integers and intMode is 1. If integers are used but the flag is 0, it will still work, just slowly.
 
 
 Input File Format:
